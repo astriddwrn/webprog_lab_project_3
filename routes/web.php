@@ -26,6 +26,6 @@ Route::group(['middleware' => ['auth']], function() {
 
  });
 
- Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index']);
- });
+Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
+    Route::resource('dashboard', DashboardController::class);
+});
