@@ -11,25 +11,26 @@
 
             <div>
                 <x-jet-label value="{{ __('Name') }}" />
-                <x-jet-input class="block mt-1 w-full" type="text" name="firstname" :value="old('name')" autofocus autocomplete="firstname" />
+                <x-jet-input class="block mt-1 w-full" type="text" name="name" :value="old('name')" autofocus autocomplete="name" />
             </div>
 
             <div class="mt-4">
                 <x-jet-label value="{{ __('Gender') }}" />
                 <div class="row">
-                    <x-jet-input class="mt-1" type="radio" name="gender" values="Female" /> Female
-                    <x-jet-input class="mt-1" type="radio" name="gender" values="Male" /> Male
+                    <x-jet-input class="mt-1" type="radio" name="gender" values="Female" :value="old('gender')"/> Female
+                    <x-jet-input class="mt-1" type="radio" name="gender" values="Male" :value="old('gender')" /> Male
                 </div>
             </div>
 
             <div class="mt-4">
                 <x-jet-label for="date_of_birth" value="Date of Birth" />
-                <x-jet-input id="date_of_birth" type="date" class="mt-1 block w-full"  />
+                <x-jet-input id="date_of_birth" name="date_of_birth" type="date" class="mt-1 block w-full"  :value="old('date_of_birth')" autocomplete="date_of_birth"/>
             </div>
 
             <div class="mt-4">
                 <x-jet-label for="country" value="{{ __('Country') }}" />
-                <select id="gender" class="block mt-1 w-full" >
+                <select id="country" name="country" class="block mt-1 w-full" :value="old('country')" autocomplete="country">
+                    <option value="">--Please choose your country-</option>
                     <option value="Indonesia">
                         Indonesia
                     </option>
@@ -46,12 +47,12 @@
 
             <div class="mt-4">
                 <x-jet-label value="{{ __('Password') }}" />
-                <x-jet-input class="block mt-1 w-full" type="password" name="password" autocomplete="new-password" />
+                <x-jet-input class="block mt-1 w-full" type="password" name="password" autocomplete="new-password" :value="old('password')"  />
             </div>
 
             <div class="mt-4">
                 <x-jet-label value="{{ __('Confirm Password') }}" />
-                <x-jet-input class="block mt-1 w-full" type="password" name="password_confirmation" autocomplete="new-password" />
+                <x-jet-input class="block mt-1 w-full" type="password" name="password_confirmation" autocomplete="new-password" :value="old('password_confirmation')"  />
             </div>
 
             <div class="flex items-center justify-end mt-4">

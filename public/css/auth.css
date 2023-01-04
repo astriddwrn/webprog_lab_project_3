@@ -34,7 +34,7 @@
     min-height: 100vh;
 }
 
-input{
+input, select{
     color: var(--darkblue);
     letter-spacing: 0.1em;
     font-size:1.5rem;
