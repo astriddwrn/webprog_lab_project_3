@@ -1,0 +1,207 @@
+.all-category .container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner{
+    height: 25vh;
+    
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 50%;
+    padding-right: 4%;
+}
+
+.banner.all{
+    background-image: url(../Assets/all-banner.png);
+}
+
+.banner.men{
+    background-image: url(../Assets/men-banner.png);
+}
+
+.banner.women{
+    background-image: url(../Assets/women-banner.png);
+}
+
+.banner h1{
+    letter-spacing: 5px;
+    font-size: 4rem;
+    line-height: 6rem;
+    font-style: italic;
+    color: var(--skyblue);
+}
+
+.banner p{
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+    letter-spacing: 2px;
+    color: var(--white);
+}
+
+.all-gallery{
+    padding: 5vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+.item{
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-image{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    padding: 10px 10px 0px 10px;
+    box-shadow: 0px 0px 20px rgba(150, 149, 149,0.5);
+}
+
+.item-image img{
+    height: 280px;
+}
+
+.item .overlay{
+    position: absolute;
+    height: 290px;
+    top: -290px; left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s top ease-in-out;
+}
+
+.item-image:hover .overlay{
+    top: 0; left: 0;
+}
+
+.overlay a{
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--darkblue);
+    background-color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out background-color;
+}
+
+.overlay a:hover{
+    background-color: #cacaca;
+}
+
+.item-info, .item-price{
+    height: 12vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item-price{
+    justify-content: flex-start;
+}
+
+.item-info h2,.item-price p{
+    text-align: center;
+    line-height: 2rem;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    color: var(--darkblue);
+}
+
+.item-price.discount p:first-of-type{
+    margin-bottom: 1rem;
+    opacity: 33%;
+    text-decoration: line-through;
+}
+
+.item-price.discount p:last-of-type{
+    color: #C63030;
+}
+
+@media all and (max-width: 1280px) { 
+    .banner{
+        padding-right: 3%;
+    }
+
+    .banner h1{
+        font-size: 3rem;
+        line-height: 5rem;
+    }
+
+    .banner p{
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+}
+
+@media all and (max-width: 1096px){
+    .item{
+        max-width: 50vw;
+        flex-grow: 1;
+    }
+}
+
+@media all and (max-width: 1024px) { 
+    .banner{
+        padding: 0 1.5rem;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media all and (max-width: 768px) { 
+    .banner{
+        height: 20vh;
+        padding: 0 1rem;
+    }
+
+    .banner h1{
+        font-size: 2rem;
+        line-height: 3.5rem;
+    }
+
+    .banner p{
+        font-size: 1rem;
+        line-height: 1.6rem ;
+    }
+}
+
+@media all and (max-width: 744px) {
+    .item{
+        max-width: none;
+    }
+}
+
+@media all and (max-width: 480px) { 
+    .banner{
+        height: 15vh;
+        padding: 0 0.5rem;
+    }
+
+    .banner h1{
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+    }
+
+    .banner p{
+        font-size: 0.8rem;
+        line-height: 1.3rem ;
+    }
+}

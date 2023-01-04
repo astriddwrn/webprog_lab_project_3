@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
+
+:root{
+    --darkblue : #384865;
+    --lightblue: #7C8DAB;
+
+}
+
+body{
+    font-family: 'Roboto',sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+input, button{
+    background-color: inherit;
+    border-style: hidden;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.no-outline:focus {
+    outline: none;
+}
+
+a, a:hover, a:focus, a:active, u {
+    text-decoration: none !important;
+}
+
+a:hover{
+    color: none;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
