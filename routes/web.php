@@ -5,6 +5,7 @@ use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\ProfileController;
 
 
 Route::get('/', function () {
@@ -23,6 +24,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/add-to-cart', [CartController::class, 'store']);
     Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart.delete');
     Route::delete('/cartAll/{id}', [CartController::class, 'destroyAll'])->name('cart.deleteAll');
+    Route::get('/profile', [ProfileController::class, 'index']);
 
  });
 

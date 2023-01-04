@@ -17,6 +17,7 @@ body{
     font-family: 'Roboto',sans-serif;
     background-color: var(--white);
     overflow-x: hidden;
+    
 }
 
 li{
@@ -26,6 +27,7 @@ li{
 a{
     text-decoration: none;
 }
+
 
 .container{
     padding-inline: 6rem;
