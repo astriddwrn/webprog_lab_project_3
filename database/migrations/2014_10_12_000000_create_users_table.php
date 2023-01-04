@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('gender');
             $table->date('date_of_birth');
             $table->string('country');
+            $table->integer('role_as')->default('0');
             $table->timestamps();
         });
     }

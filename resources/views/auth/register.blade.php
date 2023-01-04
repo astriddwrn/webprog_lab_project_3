@@ -17,8 +17,8 @@
             <div class="mt-4">
                 <x-jet-label value="{{ __('Gender') }}" />
                 <div class="row">
-                    <x-jet-input class="mt-1" type="radio" name="gender" values="Female" :value="old('gender')"/> Female
-                    <x-jet-input class="mt-1" type="radio" name="gender" values="Male" :value="old('gender')" /> Male
+                    <x-jet-input class="mt-1" type="radio" name="gender" value="Female" :value="old('gender')"/> Female
+                    <x-jet-input class="mt-1" type="radio" name="gender" value="Male" :value="old('gender')" /> Male
                 </div>
             </div>
 
