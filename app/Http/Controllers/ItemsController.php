@@ -31,8 +31,7 @@ class ItemsController extends Controller
         $search = $request->input('search');
         $items = Item::query()
             ->where('id', 'LIKE', "%{$search}%")
-            ->get();
-
+            ->paginate(10);
         return view('category', ['items' => $items, 'category' => null]);
 
     }

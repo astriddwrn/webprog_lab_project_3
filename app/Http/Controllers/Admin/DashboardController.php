@@ -33,7 +33,7 @@ class DashboardController extends Controller
             'category_id' => 'required',
             'rating' => 'required',
             'description' => 'required',
-            'price' => 'required',
+            'price' => 'required|numeric',
             'discount' => 'required',
         ]);
     
@@ -80,7 +80,7 @@ class DashboardController extends Controller
             'category_id' => 'required',
             'rating' => 'required',
             'description' => 'required',
-            'price' => 'required',
+            'price' => 'required|numeric',
             'discount' => 'required',
         ]);
     

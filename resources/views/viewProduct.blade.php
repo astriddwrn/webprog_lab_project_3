@@ -61,39 +61,41 @@
                 <div class="product-desc">
                     <p>{{$item->description}}</p>
                 </div>
-                <form action="/add-to-cart" method="POST" class="product-form">
-                    @csrf
-                    <input type="hidden" name="item_id" value="{{$item->id}}">
-                    <div class="product-select">
-                        <select name="size" id="size">
-                            <option value="" selected disabled hidden>Select Size</option>
-                            <option value="Small (S)">Small (S)</option>
-                            <option value="Medium (M)">Medium (M)</option>
-                            <option value="Large (L)">Large (L)</option>
-                        </select>
-                    </div>
-                    <div class="product-select mt-3">
-                        <select name="quantity" id="size" class="size">
-                            <option value="" selected disabled hidden>Select Quantity</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-                    <div class="submit-btn">
-                        <div style="cursor: pointer;">
-                            <p>ADD TO CART</p> 
-                            <img src="{{url('Assets/arrow-right.png')}}" alt="">
+                @if (auth()->check())
+                    <form action="/add-to-cart" method="POST" class="product-form">
+                        @csrf
+                        <input type="hidden" name="item_id" value="{{$item->id}}">
+                        <div class="product-select">
+                            <select name="size" id="size">
+                                <option value="" selected disabled hidden>Select Size</option>
+                                <option value="Small (S)">Small (S)</option>
+                                <option value="Medium (M)">Medium (M)</option>
+                                <option value="Large (L)">Large (L)</option>
+                            </select>
                         </div>
-                    </div> 
-                </form>
+                        <div class="product-select mt-3">
+                            <select name="quantity" id="size" class="size">
+                                <option value="" selected disabled hidden>Select Quantity</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        <div class="submit-btn">
+                            <div style="cursor: pointer;">
+                                <p>ADD TO CART</p> 
+                                <img src="{{url('Assets/arrow-right.png')}}" alt="">
+                            </div>
+                        </div> 
+                    </form>
+                @endif
             </div>
         </div>
     </section>
@@ -130,10 +132,6 @@
                 let $priceDiscount = Math.floor($price - ($price*$discount/100));
                 $(this).text('Now Rp ' + $priceDiscount);
             });
-
-            
-
-
         });
     </script>
     <script src="{{url('js/navbar.js')}}"></script>
