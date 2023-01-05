@@ -31,75 +31,79 @@
             
             <div class="all-gallery">
                 @if($category)
-                    @foreach($category->items as $item)
+                    @foreach($items as $item)
                     <div class="item">
-                    <div class="item-image">
-                    @foreach($item->pictures as $picture)
-                        @if($loop->first)
-                        <img src="{{asset('Assets/' . $picture->location)}}" alt="">
-                        @endif
-                    @endforeach
+                        <div class="item-image">
+                        @foreach($item->pictures as $picture)
+                            @if($loop->first)
+                            <img src="{{asset('Assets/' . $picture->location)}}" alt="">
+                            @endif
+                        @endforeach
 
-                        <div class="overlay">
-                            <a href="/item/{{$item->id}}">View</a>
+                            <div class="overlay">
+                                <a href="/item/{{$item->id}}">View</a>
+                            </div>
+                        
                         </div>
-                    
+                        
+                        <div class="item-info" style="text-transform: uppercase;">
+                            <h2>{{$item->id}}</h2>
+                        </div>
+                        @if( $item->discount > 0)
+                            <div class="item-price discount">
+                                <p>Rp {{$item->price}}</p>
+                                <p class="price-discount"></p>
+                                <input type="hidden" class="price-input" value="{{$item->price}}">
+                                <input type="hidden" class="discount-input" value="{{$item->discount}}">
+                                
+                            </div>
+                        @else
+                            <div class="item-price">
+                                <p>Rp {{$item->price}}</p>
+                            </div>
+                        @endif
                     </div>
-                    
-                    <div class="item-info" style="text-transform: uppercase;">
-                        <h2>{{$item->id}}</h2>
-                    </div>
-                    @if( $item->discount > 0)
-                        <div class="item-price discount">
-                            <p>Rp {{$item->price}}</p>
-                            <p class="price-discount"></p>
-                            <input type="hidden" class="price-input" value="{{$item->price}}">
-                            <input type="hidden" class="discount-input" value="{{$item->discount}}">
-                            
-                        </div>
-                    @else
-                        <div class="item-price">
-                        <p>Rp {{$item->price}}</p>
-                        </div>
-                    @endif
-                </div>
-                @endforeach
+                    @endforeach
+                
                 
                 @elseif($items)
                     @foreach($items as $item)
                     <div class="item">
-                    <div class="item-image">
-                    @foreach($item->pictures as $picture)
-                        @if($loop->first)
-                        <img src="{{asset('Assets/' . $picture->location)}}" alt="">
-                        @endif
-                    @endforeach
+                        <div class="item-image">
+                        @foreach($item->pictures as $picture)
+                            @if($loop->first)
+                            <img src="{{asset('Assets/' . $picture->location)}}" alt="">
+                            @endif
+                        @endforeach
 
-                        <div class="overlay">
-                            <a href="/item/{{$item->id}}">View</a>
+                            <div class="overlay">
+                                <a href="/item/{{$item->id}}">View</a>
+                            </div>
+                        
                         </div>
-                    
+                        
+                        <div class="item-info" style="text-transform: uppercase;">
+                            <h2>{{$item->id}}</h2>
+                        </div>
+                        @if( $item->discount > 0)
+                            <div class="item-price discount">
+                                <p>Rp {{$item->price}}</p>
+                                <p class="price-discount"></p>
+                                <input type="hidden" class="price-input" value="{{$item->price}}">
+                                <input type="hidden" class="discount-input" value="{{$item->discount}}">
+                                
+                            </div>
+                        @else
+                            <div class="item-price">
+                                <p>Rp {{$item->price}}</p>
+                            </div>
+                        @endif
                     </div>
-                    
-                    <div class="item-info" style="text-transform: uppercase;">
-                        <h2>{{$item->id}}</h2>
-                    </div>
-                    @if( $item->discount > 0)
-                        <div class="item-price discount">
-                            <p>Rp {{$item->price}}</p>
-                            <p class="price-discount"></p>
-                            <input type="hidden" class="price-input" value="{{$item->price}}">
-                            <input type="hidden" class="discount-input" value="{{$item->discount}}">
-                            
-                        </div>
-                    @else
-                        <div class="item-price">
-                        <p>Rp {{$item->price}}</p>
-                        </div>
-                    @endif
-                </div>
-                @endforeach
+                    @endforeach
                 @endif
+                <div class="w-100 d-flex justify-content-center">
+                    {!! $items->links() !!}
+                </div>
             </div>
         </div>
     </section>
@@ -114,7 +118,7 @@
                 </div>
             </div>
             <div class="right-footer">
-                <h1>New in FAVE?</h1>
+                <h1>New in Barbatos?</h1>
                 <p>Suscribe to our monthly magazine for more fashion mix and match tips & tricks!</p>
                 <div class="subscribe">
                     <form action="">

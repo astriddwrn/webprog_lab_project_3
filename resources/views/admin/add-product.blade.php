@@ -68,9 +68,13 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="form_name">Description</label>
-                                                <div><textarea id="description" name="description" rows="4" cols="50" required></textarea></div>                               
+                                                <div><textarea id="description" name="description" rows="4" cols="50%" required></textarea></div>                               
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="formFile" class="form-label">Thumbnail</label>
+                                        <input class="form-control" type="file" id="formFile">
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">

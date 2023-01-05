@@ -2,11 +2,11 @@
 
 <br />
 <p align="center">
-  <a href="https://github.com/astriddwrn/aksubFave-teamProject/">
+  <a href="https://github.com/astriddwrn/aksubBarbatos-teamProject/">
     <img src="public/Assets/logo-website.png" alt="Logo" height="50px">
   </a>
 
-  <h3 align="center"> Fave Mini Project: Fave Online Shop</h3>
+  <h3 align="center"> Barbatos Mini Project: Barbatos Online Shop</h3>
 
 </p>
 
@@ -34,12 +34,12 @@
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
     DB_PORT=3306
-    DB_DATABASE=aksubfave-teamproject
+    DB_DATABASE=aksubBarbatos-teamproject
     DB_USERNAME=root
     DB_PASSWORD=
    ``` 
 4. Start XAMPP Apache and MySQL
-5. Create new database in Phpmyadmin named "aksubfave-teamproject"
+5. Create new database in Phpmyadmin named "aksubBarbatos-teamproject"
 6. Laravel migrate
     ```sh
    php artisan migrate

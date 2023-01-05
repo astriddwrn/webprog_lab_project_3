@@ -22,7 +22,7 @@ class ItemsController extends Controller
 
     public function allItem()
     {
-        $items = Item::all();
+        $items = Item::paginate(10);
         return view('category', ['items' => $items, 'category' => null]);
         // return dd($category);
     }

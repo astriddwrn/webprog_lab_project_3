@@ -18,7 +18,8 @@ class CategoryController extends Controller
     {
         // $picture = Picture::findOrFail($id);
         $category = Category::findOrFail($id);
-        return view('category', compact('category'));
+        $items = $category->items()->paginate(10);
+        return view('category', compact('category', 'items'));
         // return dd($category);
     }
 

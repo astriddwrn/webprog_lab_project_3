@@ -48,6 +48,11 @@ a{
     align-items: center;
 }
 
+
+.nav-logo img{
+    width: 250px;
+}
+
 .nav-list{
     display: flex;
     align-items: center;

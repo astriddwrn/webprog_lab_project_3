@@ -15,7 +15,7 @@ class ItemsApiController extends Controller
      */
     public function index()
     {
-        $Items = Item::all();
+        $Items = Item::paginate(10);
         return response()->json([
             'Item' => $Items
         ]);

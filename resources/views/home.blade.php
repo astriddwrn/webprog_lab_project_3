@@ -145,7 +145,7 @@
                 </div>
             </div>
             <div class="right-footer">
-                <h1>New in FAVE?</h1>
+                <h1>New in Barbatos?</h1>
                 <p>Suscribe to our monthly magazine for more fashion mix and match tips & tricks!</p>
                 <div class="subscribe">
                     <form action="">
