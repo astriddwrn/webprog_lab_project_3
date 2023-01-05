@@ -57,6 +57,7 @@ class CartController extends Controller
             $cart->user_id = Auth::user()->id;
             $cart->item_id = $request->item_id;
             $cart->size = $request->size;
+            $cart->quantity = $request->quantity;
             $cart->save();
             return redirect()->back();
         }else{
@@ -111,6 +112,13 @@ class CartController extends Controller
     }
 
     public function destroyAll($id){
+        Cart::query()
+            ->where('user_id',$id)
+            ->each(function($old){
+                $new = $old->replicate();
+                $new->setTable('histories');
+                $new->save();
+        });
         Cart::where('user_id',$id)->delete();
         return back();
     }

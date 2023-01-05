@@ -18,6 +18,7 @@ Route::get('/category', function () {
 Route::get('/all', [ItemsController::class, 'allItem']);
 Route::get('/category/{id}', [CategoryController::class, 'index']);
 Route::get('/item/{id}', [ItemsController::class, 'index']);
+Route::get('/search/', [ItemsController::class, 'search'])->name('search');
 
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/cart', [CartController::class, 'index']);

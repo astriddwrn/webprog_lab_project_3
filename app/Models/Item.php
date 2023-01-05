@@ -24,4 +24,8 @@ class Item extends Model
     public function Carts(){
         return $this->hasMany(Cart::class, 'item_id'); //foreign key of this in other's table & primary of this
     }
+
+    public function History(){
+        return $this->hasMany(Cart::class, 'item_id'); //foreign key of this in other's table & primary of this
+    }
 }

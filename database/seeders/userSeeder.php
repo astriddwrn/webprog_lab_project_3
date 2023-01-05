@@ -23,7 +23,7 @@ class userSeeder extends Seeder
                 'email'=>'admin@gmail.com',
                 'password'=>Hash::make('admin12345'),
                 'gender'=>'Female',
-                'date_of_birth'=>date('01-01-2002'),
+                'date_of_birth'=>date('2002-01-01'),
                 'country'=>'indonesia',
                 'role_as'=>1
             ],
@@ -33,7 +33,7 @@ class userSeeder extends Seeder
                 'email'=>'user@gmail.com',
                 'password'=>Hash::make('user12345'),
                 'gender'=>'Female',
-                'date_of_birth'=>date('01-01-2002'),
+                'date_of_birth'=>date('2002-01-01'),
                 'country'=>'indonesia',
                 'role_as'=>0
             ],

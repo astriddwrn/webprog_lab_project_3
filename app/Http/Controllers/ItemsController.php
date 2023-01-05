@@ -27,6 +27,16 @@ class ItemsController extends Controller
         // return dd($category);
     }
 
+    public function search(Request $request){
+        $search = $request->input('search');
+        $items = Item::query()
+            ->where('id', 'LIKE', "%{$search}%")
+            ->get();
+
+        return view('category', ['items' => $items, 'category' => null]);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -15,9 +15,9 @@
             <div class="">
                 <div class="text-center mb-3 cart mt-4">CART</div>
             <div class="line"></div>
-
+            <div class="d-flex" style="gap:20px;">
             @foreach($carts as $cart)
-            <div class="item bg-light mt-4 d-flex flex-direction-column align-items-center  position-relative p-3 rounded">
+            <div class="item bg-light mt-4 d-flex flex-direction-column align-items-center position-relative p-3 rounded">
                 <form action="{{route('cart.delete', $cart->id)}}" method="POST">
                     @csrf
                     @method('DELETE')
@@ -42,23 +42,27 @@
                     <input type="hidden" class="disc-input" id="discount" value="{{$cart->item->discount}}">
                     <div class="d-flex flex-direction-row">
                         <div class="qty">Quantity: </div>
-                        <select name="qty" id="qty" class="qty-input">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
+                        <select name="qty" id="qty" class="qty-input" disabled>
+                            <option value="1" {{$cart->quantity == "1"  ? 'selected' : ''}}>1</option>
+                            <option value="2" {{$cart->quantity == "2"  ? 'selected' : ''}}>2</option>
+                            <option value="3" {{$cart->quantity == "3"  ? 'selected' : ''}}>3</option>
+                            <option value="4" {{$cart->quantity == "4"  ? 'selected' : ''}}>4</option>
+                            <option value="5" {{$cart->quantity == "5"  ? 'selected' : ''}}>5</option>
+                            <option value="6" {{$cart->quantity == "6"  ? 'selected' : ''}}>6</option>
+                            <option value="7" {{$cart->quantity == "7"  ? 'selected' : ''}}>7</option>
+                            <option value="8" {{$cart->quantity == "8"  ? 'selected' : ''}}>8</option>
+                            <option value="9" {{$cart->quantity == "9"  ? 'selected' : ''}}>9</option>
+                            <option value="10" {{$cart->quantity == "10"  ? 'selected' : ''}}>10</option>
                         </select>
                     </div>
+                    <input type="number" class="total-input" id="total" value="">
                 </div>
                 
             </div>
             @endforeach
+            </div>
+        
+
             </div>
         </div>
 
@@ -129,13 +133,13 @@
                     let $priceDiscount = Math.floor($price - ($price*$disc/100));
                     $(this).parent().parent().find('.price').text('Rp ' + $priceDiscount);
                     $sum += Math.floor($priceDiscount*$qty);
-                    console.log($qty);
+                    $total_price = Math.floor($priceDiscount*$qty);
+                    $(this).parent().parent().find('.total-input').val($total_price);
                 });
                 $tax = Math.floor($sum/10/100);
                 $total += $sum+$tax;
                 $('.input-sum').text($sum);
                 $('.input-tax').text($tax);
-                $('.input-total').text($total);
 
             $('.qty-input').change(function(){
                 let $sum = 0;

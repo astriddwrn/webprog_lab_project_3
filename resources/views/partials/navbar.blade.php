@@ -13,24 +13,25 @@
         <ul class="nav-list">
             <li class="nav-item">
                 <div id="search-wrapper">
-                    <a id="search-bar">
-                        <img src="{{ asset('Assets/category-search.png')}}" alt="">
-                        <span><input type="text" name="search" id="search"></span>
-                    </a>
-                    <div id="search-box">
-                    </div>
+                    <form action="{{ route('search') }}" method="GET">
+                        <div id="search-wrapper">
+                            <a id="search-bar">
+                                <img src="{{ asset('Assets/category-search.png')}}" alt="">
+                                <input type="text" name="search" id="search">
+                            </a>
+                        </div>
+                    </form>
                 </div>
             </li>
-            @if (auth()->check() && auth()->user()->role_as != '1')
             <li class="nav-item">
                 <a href="/cart" style="display: flex; align-items: center;">
                     <img src="{{ asset('Assets/home-shopping-cart.png')}}" alt="">
                 </a>
             </li>
-            @endif
+            
             @if (auth()->check())
                 @if (auth()->user()->role_as == '1')
-                    <li class="nav-item"><a href="{{ url('/dashboard') }}" id="login-btn">Dashboard</a></li>
+                    <li class="nav-item"><a href="{{ url('/admin/dashboard') }}" id="login-btn">Dashboard</a></li>
                 @endif
                 <li class="nav-item"><a href="{{ url('/profile') }}" id="login-btn">Profile</a></li>
                 

@@ -11,10 +11,13 @@ var x = setInterval(function() {
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
-  document.getElementById("countdown").innerHTML = days + " Days " + hours + " Hours "
-  + minutes + " Minutes Left";
+  if(document.getElementById("countdown")){
+    document.getElementById("countdown").innerHTML = days + " Days " + hours + " Hours "
+    + minutes + " Minutes Left";
+  }
 
-  if (distance < 0) {
+
+  if (distance < 0 && document.getElementById("countdown")) {
     clearInterval(x);
     document.getElementById("countdown").innerHTML = "Special offer has ended.";
   }

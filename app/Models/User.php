@@ -66,4 +66,8 @@ class User extends Authenticatable
     public function Carts(){
         return $this->hasMany(Cart::class, 'user_id'); //foreign key of this in other's table & primary of this
     }
+
+    public function Histories(){
+        return $this->hasMany(History::class, 'user_id'); //foreign key of this in other's table & primary of this
+    }
 }
